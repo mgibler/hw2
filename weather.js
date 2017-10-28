@@ -20,9 +20,6 @@ button.addEventListener("click", function(event) {
 let chicagoWeather = function(info) {
   console.info(info)
   let openweathermap_api_url = "https://api.openweathermap.org/data/2.5/weather?lat=" + info.coords.latitude.toFixed(2) + "&lon=" + info.coords.longitude.toFixed(2) + "&appid=4ce6f502d38ddae567bf1702b05e168c&units=imperial"
-  // let latitude = '41.8781';
-  // let longitude = '-87.6298';
-  // let openweathermap_api_url = 'https://api.openweathermap.org/data/2.5/weather?lat=41.8&lon=-87.6&appid=4ce6f502d38ddae567bf1702b05e168c&units=imperial'
   fetch(openweathermap_api_url).then(convertToJSON).then(updateWeather).catch(displayError);
 }
 
@@ -65,16 +62,10 @@ link.addEventListener("click", function(event) {
 let userData = function(info) {
   console.log("User Latitude:", info.coords.latitude);
   console.log("User Longitude:", info.coords.longitude);
-//   let latitude = '41.8781';
-//   let longitude = '-87.6298';
-  let url = 'https://api.openweathermap.org/data/2.5/weather?lat=41.8&lon=-87.6&appid=4ce6f502d38ddae567bf1702b05e168c&units=imperial'
 
   }
 
-
-
-//
-//
+//displayError Script
 let displayError = function(error) {
   console.debug(error);
   window.alert("Sorry, something went wrong.");
@@ -84,7 +75,3 @@ let displayError = function(error) {
 let convertToJSON = function(response) {
   return response.json();
 }
-
-// HINT:
-// Weather icon example: http://openweathermap.org/img/w/10d.png
-// The very last part ('10d.png') can change based on the current conditions.
