@@ -36,15 +36,12 @@ let chicagoWeather = function(info) {
 let updateWeather = function(dataFromService) {
   console.info(dataFromService)
     currentLocationID = dataFromService.name;
-    currentLocation = document.querySelector('#weather h4');
-    currentLocation.innerHTML = currentLocationID;
+    currentLocation = document.querySelector('#weather h4').innerHTML = currentLocationID;
     currentTemperatureID = dataFromService.main.temp.toFixed(0);
     currentWeatherDescription = dataFromService.weather[0].description
-    currentTemperature = document.querySelector('#weather p');
-    currentTemperature.innerHTML = "It is " + currentTemperatureID + " degrees outside with " + currentWeatherDescription +".";
+    currentTemperature = document.querySelector('#weather p').innerHTML = "It is " + currentTemperatureID + " degrees outside with " + currentWeatherDescription +".";
     currentWeatherImgUrl = "http://openweathermap.org/img/w/" + dataFromService.weather[0].icon + ".png";
-    currentWeatherImg = document.querySelector('#weather img');
-    currentWeatherImg.src = currentWeatherImgUrl;
+    currentWeatherImg = document.querySelector('#weather img').src = currentWeatherImgUrl;
 }
 
 
